@@ -1,0 +1,209 @@
+/* GitHub-inspired Clean Business Card */
+
+/* CSS Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* GitHub Color Palette */
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --border-default: #30363d;
+    --text-primary: #e6edf3;
+    --text-secondary: #7d8590;
+    --text-link: #58a6ff;
+    --text-link-hover: #79c0ff;
+    --accent: #238636;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+
+    /* Border Radius */
+    --radius-sm: 6px;
+    --radius-md: 8px;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-md);
+}
+
+.container {
+    max-width: 600px;
+    width: 100%;
+}
+
+/* Card Styles */
+.card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+}
+
+/* Profile Section */
+.profile {
+    text-align: center;
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid var(--border-default);
+    margin-bottom: var(--spacing-md);
+    transition: transform 0.2s ease;
+}
+
+.avatar:hover {
+    transform: scale(1.05);
+}
+
+.name {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-primary);
+}
+
+.linkedin {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    color: var(--text-link);
+    text-decoration: none;
+    font-size: 0.875rem;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    transition: all 0.2s ease;
+}
+
+.linkedin:hover {
+    color: var(--text-link-hover);
+    background-color: var(--bg-tertiary);
+}
+
+/* Projects Section */
+.projects {
+    margin-top: var(--spacing-lg);
+}
+
+.section-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    padding-bottom: var(--spacing-sm);
+}
+
+.project-list {
+    list-style: none;
+}
+
+.project-link {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) 20px;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+}
+
+.project-link:hover {
+    background-color: var(--bg-tertiary);
+    border-radius: var(--radius-sm);
+}
+
+.project-link:hover .project-name {
+    color: var(--text-link-hover);
+}
+
+.project-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    flex: 1;
+}
+
+.project-name {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--text-link);
+    transition: color 0.2s ease;
+}
+
+.project-description {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+/* Icons */
+.icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.linkedin .icon {
+    width: 16px;
+    height: 16px;
+    margin-top: 0;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    padding: var(--spacing-md) 0;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+    .card {
+        padding: var(--spacing-lg);
+    }
+
+    .avatar {
+        width: 96px;
+        height: 96px;
+    }
+
+    .name {
+        font-size: 1.5rem;
+    }
+
+    body {
+        padding: var(--spacing-sm);
+    }
+}
+
+/* Smooth transitions for all interactive elements */
+a,
+button {
+    transition: all 0.2s ease;
+}
+
+/* Selection styles */
+::selection {
+    background-color: rgba(88, 166, 255, 0.3);
+    color: var(--text-primary);
+}
